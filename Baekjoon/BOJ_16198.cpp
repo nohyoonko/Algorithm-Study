@@ -1,5 +1,5 @@
 /* 
-* BOJ #16198 ¿¡³ÊÁö ¸ğÀ¸±â 
+* BOJ #16198 ì—ë„ˆì§€ ëª¨ìœ¼ê¸°
 * Brute Force - Recursive Function
 * 2020.02.10
 */
