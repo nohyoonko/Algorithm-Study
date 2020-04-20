@@ -1,6 +1,6 @@
 /*
-* BOJ #16198 Àû·Ï»ö¾à
-* Brute Force - Recursive Function
+* BOJ #10026 ì ë¡ìƒ‰ì•½
+* BFS
 * 2020.02.12
 */
 
@@ -12,7 +12,7 @@
 using namespace std;
 
 int n;
-// »ó, ÇÏ, ÁÂ, ¿ì
+// ìƒ, í•˜, ì¢Œ, ìš°
 int dx[] = { 0, 0, -1, 1 };
 int dy[] = { -1, 1, 0, 0 };
 char original[MAX][MAX];
@@ -20,29 +20,29 @@ char weak[MAX][MAX];
 bool visited[MAX][MAX];
 
 void bfs(int x, int y, char (*paint)[MAX]) {
-	// bfs¸¦ ÇÏ±â À§ÇØ ÀÌ¿ëÇÒ queue(ÁÂÇ¥¶§¹®¿¡ pair<int,int> »ç¿ë)
+	// bfsë¥¼ í•˜ê¸° ìœ„í•´ ì´ìš©í•  queue(ì¢Œí‘œë•Œë¬¸ì— pair<int,int> ì‚¬ìš©)
 	queue<pair<int, int> > q;
-	// ½ÃÀÛ Á¤Á¡À» Å¥¿¡ ³Ö¾îÁÖ°í visitedµµ true·Î º¯°æ
+	// ì‹œì‘ ì •ì ì„ íì— ë„£ì–´ì£¼ê³  visitedë„ trueë¡œ ë³€ê²½
 	q.push(make_pair(x, y));
 	visited[x][y] = true;
 
 	while (!q.empty()) {
-		// Å¥ÀÇ ÇöÀç ¿ø¼Ò¸¦ ²¨³»¼­ ¹æ¹®ÇÏ±â
+		// íì˜ í˜„ì¬ ì›ì†Œë¥¼ êº¼ë‚´ì„œ ë°©ë¬¸í•˜ê¸°
 		x = q.front().first;
 		y = q.front().second;
 		//char color = paint[x][y];
 		q.pop();
 
-		// ÇØ´ç À§Ä¡ÀÇ ÁÖº¯À» È®ÀÎ
+		// í•´ë‹¹ ìœ„ì¹˜ì˜ ì£¼ë³€ì„ í™•ì¸
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
 
-			// ¹è¿­À» ¹ş¾î³ªÁö ¾Ê°í
+			// ë°°ì—´ì„ ë²—ì–´ë‚˜ì§€ ì•Šê³ 
 			if (nx >= 0 && nx < n && ny >= 0 && ny < n) {
-				// »öÀÌ °°°í ¹æ¹®ÇÏÁö ¾Ê¾Ò´Ù¸é
+				// ìƒ‰ì´ ê°™ê³  ë°©ë¬¸í•˜ì§€ ì•Šì•˜ë‹¤ë©´
 				if (paint[nx][ny] == paint[x][y] && visited[nx][ny] == false) {
-					// ¹æ¹®À¸·Î º¯°æÇÏ°í Å¥¿¡ ÇöÀç nx, ny¸¦ Ãß°¡
+					// ë°©ë¬¸ìœ¼ë¡œ ë³€ê²½í•˜ê³  íì— í˜„ì¬ nx, nyë¥¼ ì¶”ê°€
 					visited[nx][ny] = true;
 					q.push(make_pair(nx, ny));
 				}
@@ -69,20 +69,20 @@ int main(void) {
 		}
 	}
 
-	/* Àû·Ï»ö¾àÀÌ ¾Æ´Ñ »ç¶÷ÀÇ °æ¿ì */
+	/* ì ë¡ìƒ‰ì•½ì´ ì•„ë‹Œ ì‚¬ëŒì˜ ê²½ìš° */
 	memset(visited, false, sizeof(visited));
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			if (visited[i][j] == false) {
-				// bfs¸¦ ½ÇÇàÇÏ´Â ¸¸Å­ÀÌ ±¸¿ªÀÇ °³¼ö
-				// bfs¿¡ µé¾î°¡¼­ °°Àº »ö»óÀ» ¸¸³ªÁö ¸øÇÒ ¶§±îÁö while¹®À» µ¹±â ¶§¹®¿¡
+				// bfsë¥¼ ì‹¤í–‰í•˜ëŠ” ë§Œí¼ì´ êµ¬ì—­ì˜ ê°œìˆ˜
+				// bfsì— ë“¤ì–´ê°€ì„œ ê°™ì€ ìƒ‰ìƒì„ ë§Œë‚˜ì§€ ëª»í•  ë•Œê¹Œì§€ whileë¬¸ì„ ëŒê¸° ë•Œë¬¸ì—
 				bfs(i, j, original);
 				answer1++;
 			}
 		}
 	}
 
-	/* Àû·Ï»ö¾àÀÎ »ç¶÷ÀÇ °æ¿ì */
+	/* ì ë¡ìƒ‰ì•½ì¸ ì‚¬ëŒì˜ ê²½ìš° */
 	memset(visited, false, sizeof(visited));
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
