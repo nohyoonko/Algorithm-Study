@@ -1,5 +1,5 @@
 /*
-* Programmers mockTest
+* Programmers - Mock test
 * Brute-Force Lv.1
 * 2020.02.20
 */
