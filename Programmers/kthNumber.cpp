@@ -5,7 +5,7 @@
 */
 #include <iostream>
 #include <vector>
-#include <algorithm> //sort
+#include <algorithm> //sort()
 
 using namespace std;
 
