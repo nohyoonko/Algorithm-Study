@@ -1,12 +1,11 @@
 /*
-* Programmers - Mock test
+* Programmers - Mock Test
 * Brute-Force Lv.1
 * 2020.02.20
 */
-
-#include <string>
+#include <iostream>
 #include <vector>
-#include <algorithm>
+#include <algorithm> // *max_element()
 
 using namespace std;
 
