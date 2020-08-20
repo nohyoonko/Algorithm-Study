@@ -1,9 +1,8 @@
 /*
-* BOJ #10026 적록색약
-* BFS
-* 2020.02.12
+*	Baekjoon
+*	#10026 적록색약 - BFS
+*	2020.02.12
 */
-
 #include <iostream>
 #include <vector>
 #include <queue>
