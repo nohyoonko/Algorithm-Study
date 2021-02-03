@@ -1,5 +1,3 @@
-package com.ssafy.solve;
-
 import java.util.Scanner;
 
 public class SWEA_Memory {
