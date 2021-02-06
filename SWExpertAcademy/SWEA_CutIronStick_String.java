@@ -12,16 +12,16 @@ public class SWEA_CutIronStick_String {
 			int totalStickCnt = 0; // 정답
 			String str = br.readLine();
 			
-			// 2. 레이저를 다른 문자로 바꾸면 좀 더 조건문이 간단해짐
+			// 2. 레이저를 다른 문자로 바꾸면 조건문이 간결해짐
 			str = str.replace("()", "X");
 			for (int i = 0; i < str.length(); i++) {
 				char ch = str.charAt(i);
-				if (ch == ')') {
+				if (ch == ')') { // 무조건 쇠막대기의 끝
 					totalStickCnt++;
 					stickCnt--;
-				} else if (ch == 'X') {
+				} else if (ch == 'X') { // 무조건 레이저
 					totalStickCnt += stickCnt;
-				} else if (ch == '(') {
+				} else if (ch == '(') { // 무조건 쇠막대기의 시작
 					stickCnt++;
 				}
 			}
