@@ -21,6 +21,8 @@ public class BOJ_2669 {
 
 			for (int r = x1; r < x2; r++) {
 				for (int c = y1; c < y2; c++) {
+					// 겹쳐있지 않으면 체크 후 면적 증가
+					// 결국 한 칸의 면적이 1이기 때문에 ++로 면적 구할 수 있음
 					if (!rectangle[r][c]) {
 						rectangle[r][c] = true;
 						area++;
