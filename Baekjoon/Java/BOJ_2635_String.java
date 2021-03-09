@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-public class BOJ_2635 {
+public class BOJ_2635_String {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in); // 입력: Scanner
 		int N = sc.nextInt(); // 1 <= N <= 30,000
