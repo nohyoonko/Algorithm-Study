@@ -11,7 +11,7 @@ public class BOJ_1463 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(in.readLine());
 		
-		int[] dp = new int[ + 1];
+		int[] dp = new int[n + 1];
 		dp[0] = dp[1] = 0;
 		
 		for (int i = 2; i <= n; i++) {
