@@ -1,5 +1,3 @@
-package com.algo.study0324;
-
 public class 타켓넘버 {
 
 	static int answer = 0;
@@ -19,10 +17,5 @@ public class 타켓넘버 {
     	dfs(idx + 1, result + numbers[idx], numbers, target);
     	dfs(idx + 1, result - numbers[idx], numbers, target);
     }
-	
-	public static void main(String[] args) {
-		int[] numbers = {1,1,1,1,1};
-		System.out.println(solution(numbers, 3)); // 5
-	}
 	
 }
